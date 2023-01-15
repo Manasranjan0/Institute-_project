@@ -1,0 +1,58 @@
+{%extends 'base.html'%}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give us your opinion</title>
+    {% include 'cdnlines.html' %}
+</head>
+<body>
+    {% block content %}
+    <h1 class="text-center text-info">Write Your Valuable feedback here</h1>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-6" style="box-shadow: 0px 5px 25px rgb(109, 228, 113), 10px 0px 10px rgb(152, 58, 196); border-radius: 20px;">
+          <form method="POST">
+            {% csrf_token %}
+            <textarea name="content" placeholder="Feedback...." cols="30"  rows="10" class="form-control"></textarea>
+            <center class="mt-2">
+              <input type="submit" value="Post" class="btn btn-outline-primary">
+            </center>
+            </form>
+
+        </div>
+
+      </div>
+    </div>
+      <div class="text-center">
+        <blockquote class="blockquote">
+          <p class="mb-0">
+            {% for i in abc %}
+          </p>
+        </blockquote>
+        <div>
+          {{i.comment }}
+
+        </div>
+        <div>
+          <footer class="blockquote-footer">By <cite title="Source Title">{{ i.user_name }}</cite>
+          </footer>
+        </div>
+        <div>
+          {{i.date}}
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{%endblock%}
+</body>
+</html>

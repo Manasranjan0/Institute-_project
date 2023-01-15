@@ -1,0 +1,16 @@
+<form method="POST">
+    {% include'cdnlines.html' %}
+    {%csrf_token%}
+    <div>
+        <textarea type="text" name="comment" cols="30" rows="10" class="form-control" placeholder="Your Comments.."></textarea>
+        <center>
+            <input type="submit" value="Comment" class="btn btn-outline-success mt-2">
+            <input type="reset" value="Clear" class="btn btn-outline-danger mt-2">
+        
+        </center>
+    </div>
+</form>
+
+    {% for i in data%}
+    <div>{{i.comments}}</div>
+    {%endfor%}

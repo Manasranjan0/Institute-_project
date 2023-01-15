@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Our Servicess</title>
+    {% include 'cdnlines.html' %}
+</head>
+
+<body>
+    {% block content %}
+    <h1 class="text-center">We are Offering</h1>
+    {% if courses %}
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+                <table class="table table-bordered text-center">
+                    <thead class="bg-success text-white">
+                        <tr>
+                            <th>Course Name</th>
+                            <th> Course Fee</th>
+                            <th>New Batch Duration</th>
+                            <th>Trainer Name</th>
+                            <th>Trainer Experence</th>
+                            <th>Training Mode</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-dark text-white">
+                        {% for i in courses %}
+                        <tr>
+                            <td>{{ i.courses_name }}</td>
+                            <td>{{ i.fee }}</td>
+                            <td>{{ i.duration }}</td>
+                            <td>{{ i.trainer_name }}</td>
+                            <td>{{ i.trainer_exp }}</td>
+                            <td>{{ i.training_mode }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <h2>No New Batches Now</h2>
+    {% endif %}
+    {% endblock %}
+</body>
+
+</html>

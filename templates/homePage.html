@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+</head>
+
+<body>
+  {% block content %}
+
+
+  <!-- Navigation -->
+
+
+  <!-- Slide Show -->
+
+  <section>
+    <img src="{% static 'images/image1.jpg' %}" class="mySlides" style="width:100%; height:500px;">
+    <img class="mySlides" src="{% static 'images/image3.jpg' %}" style="width:100%; height:500px;">
+    <img class="mySlides" src="{% static 'images/image5.jpg' %}" style="width:100%; height:500px;">
+    <img class="mySlides" src="{% static 'images/image7.jpg' %}" style="width:100%; height:500px;">
+    <img class="mySlides" src="{% static 'images/img12.jpg' %}" style="width:100%; height:500px;">
+  </section>
+
+  <div class="div1 container text-center-fluid">
+    <div class="row">
+      <div class=" offset-md-2 col-md-8">
+        <section class="w3-container w3-center w3-content" style="max-width:600px">
+          <h2 class="w3-wide"><i>About Mo INSTITUTE</i></h2>
+          <p class="w3-opacity"><i>The Best Institute In Odisha</i></p>
+          <p class="w3-justify"><i>"Mo Institute is the Best Software Training Institute for Full Stack Python
+              Developer, Full Stack Data Science & AI, Full Stack Web Development, Full.Stack .NET Core, Data Science,
+              AWS, DevOps, Java, .Net, C, C++, DS, Hadoop, Selenium, Testing Tools, Angular12, ReactJS, NodeJS, ReactJS,
+              Web Technologies, PHP with MySQL, Mobile Application Development, Android, iOS, Oracle, SQL Server,
+              PowerBI, Azure, SalesForce CRM, RPA, Digital Marketing & CRT"</i></p>
+        </section>
+      </div>
+    </div>
+  </div>
+  <!-- Band Members -->
+  <section class="w3-row-padding w3-center w3-light-grey">
+    <div class="container">
+      <div class="row">
+        <div class="text-center col-md-4">
+
+          <article class="w3-third">
+            <p>Dipak</p>
+            <img src="{% static 'images/dipak.jpg' %}" alt="Random Name" style="width:340px; height:270px;">
+            <h4 class="text-weight-bold bg-primary">Deepak Das</h4>
+            <p class="font-weight-bold bg-secondary">UI Developer &nbsp &nbsp 6LPA</p>
+          </article>
+        </div>
+        <div class="text-center col-md-4">
+          <article class="w3-third">
+            <p>Prasan</p>
+            <img src="{% static 'images/Prasan.jpg' %}" alt="Random Name" style="width:340px; height:270px;">
+            <h4 class="text-weight-bold bg-primary">Prasan Dalai</h4>
+            <p class="font-weight-bold bg-secondary ">PYTHON &nbsp &nbsp 7LPA</p>
+          </article>
+        </div>
+        <div class="text-center col-md-4">
+          <article class="w3-third">
+            <p>Manas</p>
+            <img src="{% static 'images/manas.jpeg' %}" alt="Random Name" style="width:340px; height:270px; ">
+            <h4 class="text-weight-bold bg-primary">Manas Ranjan Jena</h4>
+            <p class="font-weight-bold bg-secondary">PYTHON Full Stack &nbsp &nbsp 8LPA</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-flickr"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+  </footer>
+
+  <script>
+    // Automatic Slideshow - change image every 3 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 3000);
+    }
+  </script>
+
+  {% endblock %}
+</body>
+
+</html>
